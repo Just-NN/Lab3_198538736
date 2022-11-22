@@ -1,7 +1,7 @@
 package org.usach.TDA;
 
 
-public abstract class Pixel_198538736_GuajardoArias {
+public abstract class Abstract_Pixel_198538736_GuajardoArias {
 
     int x;
 
@@ -9,7 +9,7 @@ public abstract class Pixel_198538736_GuajardoArias {
 
     int d;
 
-    public Pixel_198538736_GuajardoArias(int x, int y, int d) {
+    public Abstract_Pixel_198538736_GuajardoArias(int x, int y, int d) {
         this.x = x;
         this.y = y;
         this.d = d;
