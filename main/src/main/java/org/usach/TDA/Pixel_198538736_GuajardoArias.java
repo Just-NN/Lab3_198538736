@@ -18,45 +18,6 @@ public class Pixel_198538736_GuajardoArias{
     }
 
 
-    public int getBit() {
-        return this.Color.getBit();
-    }
-
-    public void setBit(int bit) {
-        this.Color.setBit(bit);
-    }
-
-    public String getHex() {
-        return this.Color.getHex();
-    }
-
-    public void setHex(String hex) {
-        this.Color.setHex(hex);
-    }
-
-    public int getR() {
-        return this.Color.getR();
-    }
-
-    public void setR(int r) {
-        this.Color.setR(r);
-    }
-
-    public int getG() {
-        return this.Color.getG();
-    }
-
-    public void setG(int g) {
-        this.Color.setG(g);
-    }
-
-    public int getB() {
-        return this.Color.getB();
-    }
-
-    public void setB(int b) {
-        this.Color.setB(b);
-    }
 
     public boolean isBit(){
         return this.Color.isBit();
@@ -76,4 +37,45 @@ public class Pixel_198538736_GuajardoArias{
         System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.Color.toString() + " " + "Depth: " + this.d + "\n");
     }
 
+    public void move_pix_h(int width) {
+        if(x+1>=width){
+            setX(0);
+        }
+        else{
+            setX(x+1);
+        }
+    }
+
+    public void move_pix_v(int height) {
+        if(x+1>=height){
+            setY(0);
+        }
+        else{
+            setY(y+1);
+        }
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getD() {
+        return d;
+    }
+
+    public void setD(int d) {
+        this.d = d;
+    }
 }

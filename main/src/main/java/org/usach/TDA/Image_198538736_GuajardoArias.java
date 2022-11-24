@@ -56,7 +56,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isCompressed() {
-        if(width*height == pixlist.size()-1){
+        if(width*height == pixlist.size()){
             return true;
         }
         return false;
@@ -64,12 +64,16 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public void flipH() {
-
+        for(Pixel_198538736_GuajardoArias i : pixlist){
+            i.move_pix_h(this.width);
+        }
     }
 
     @Override
     public void flipV() {
-
+        for (Pixel_198538736_GuajardoArias i: pixlist){
+            i.move_pix_v(this.height);
+        }
     }
 
     @Override
