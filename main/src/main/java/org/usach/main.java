@@ -39,6 +39,10 @@ public class main {
         System.out.println("--- Post flipH ---");
         myImage.flipH();
         myImage.printImage();
+
+        System.out.println("--- crop ---");
+        myImage.crop(0,0,1,0);
+        myImage.printImage();
     }
 
 

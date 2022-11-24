@@ -78,4 +78,11 @@ public class Pixel_198538736_GuajardoArias{
     public void setD(int d) {
         this.d = d;
     }
+
+    public boolean inRange(int x1, int y1, int x2, int y2){
+        if((this.x >= x1) && (this.x<=x2) && (this.y >= y1) && (this.y<=y2)){
+            return true;
+        }
+        return false;
+    }
 }

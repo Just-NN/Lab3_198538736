@@ -77,8 +77,10 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     }
 
     @Override
-    public void crop() {
-
+    public void crop(int x1, int y1, int x2, int y2) {
+        this.pixlist = this.pixlist.stream()
+                .filter(pix -> pix.inRange(x1, y1, x2, y2))
+                .collect(Collectors.toList());
     }
 
     @Override
