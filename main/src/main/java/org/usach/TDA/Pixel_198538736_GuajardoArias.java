@@ -1,105 +1,79 @@
 package org.usach.TDA;
 
-public class Pixel_198538736_GuajardoArias extends Abstract_Pixel_198538736_GuajardoArias{
+public class Pixel_198538736_GuajardoArias{
 
-    int bit;
+    public int x;
 
-    String hex;
+    public int y;
 
-    int r;
+    public int d;
 
-    int g;
+    public Color_198538736_GuajardoArias Color;
 
-    int b;
-
-
-    public Pixel_198538736_GuajardoArias(int x, int y, int d, int bit) {
-        super(x, y, d);
-        this.bit = bit;
-        this.hex = "";
-        this.r = -1;
-        this.g = -1;
-        this.b = -1;
+    public Pixel_198538736_GuajardoArias(int x, int y, int d, Color_198538736_GuajardoArias Color) {
+        this.x = x;
+        this.y = y;
+        this.d = d;
+        this.Color = Color;
     }
 
-    public Pixel_198538736_GuajardoArias(int x, int y, int d, String hex) {
-        super(x, y, d);
-        this.bit = -1;
-        this.hex = hex;
-        this.r = -1;
-        this.g = -1;
-        this.b = -1;
-    }
-
-
-    public Pixel_198538736_GuajardoArias(int x, int y, int d, int r, int g, int b) {
-        super(x, y, d);
-        this.bit = -1;
-        this.hex = "";
-        this.r = r;
-        this.g = g;
-        this.b = b;
-    }
 
     public int getBit() {
-        return bit;
+        return this.Color.getBit();
     }
 
     public void setBit(int bit) {
-        this.bit = bit;
+        this.Color.setBit(bit);
     }
 
     public String getHex() {
-        return hex;
+        return this.Color.getHex();
     }
 
     public void setHex(String hex) {
-        this.hex = hex;
+        this.Color.setHex(hex);
     }
 
     public int getR() {
-        return r;
+        return this.Color.getR();
     }
 
     public void setR(int r) {
-        this.r = r;
+        this.Color.setR(r);
     }
 
     public int getG() {
-        return g;
+        return this.Color.getG();
     }
 
     public void setG(int g) {
-        this.g = g;
+        this.Color.setG(g);
     }
 
     public int getB() {
-        return b;
+        return this.Color.getB();
     }
 
     public void setB(int b) {
-        this.b = b;
+        this.Color.setB(b);
     }
 
     public boolean isBit(){
-        if(this.bit == -1){
-            return false;
-        }
-        return true;
+        return this.Color.isBit();
     }
 
     public boolean isHex(){
-        if(this.hex == ""){
-            return false;
-        }
-        return true;
-    }
-    public boolean isRGB(){
-        if((this.r == -1) && (this.g ==-1) && (this.b == -1)){
-            return false;
-        }
-        return true;
+        return this.Color.isHex();
     }
 
+    public boolean isRGB(){
+        return this.Color.isRGB();
+    }
+
+
+
+    public void printPix(){
+        System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.Color.toString() + " " + "Depth: " + this.d + "\n");
+    }
 
 }

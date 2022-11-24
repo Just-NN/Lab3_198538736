@@ -81,4 +81,12 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     public void rotate90() {
 
     }
+
+    @Override
+    public void printImage(){
+        System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
+        for(Pixel_198538736_GuajardoArias i : pixlist){
+            i.printPix();
+        }
+    }
 }

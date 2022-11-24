@@ -24,6 +24,8 @@ public interface InterImage_198538736_GuajardoArias {
 
     void rotate90();
 
+    void printImage();
+
 
 
 }
