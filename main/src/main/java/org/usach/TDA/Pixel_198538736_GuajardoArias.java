@@ -85,4 +85,13 @@ public class Pixel_198538736_GuajardoArias{
         }
         return false;
     }
+
+    public void pixRGBToHex(){
+        this.Color.rgbToHex();
+    }
+
+
+    public Color_198538736_GuajardoArias getColor() {
+        return Color;
+    }
 }

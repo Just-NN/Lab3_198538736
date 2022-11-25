@@ -127,4 +127,13 @@ public class Color_198538736_GuajardoArias {
         }
         return true;
     }
+
+    public void rgbToHex(){
+        this.hex = String.format("#%02x%02x%02x", this.r, this.g, this.b);
+        this.r = -1;
+        this.g = -1;
+        this.b = -1;
+    }
+
+
 }

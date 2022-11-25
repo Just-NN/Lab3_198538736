@@ -2,7 +2,6 @@ package org.usach.TDA;
 
 public interface InterImage_198538736_GuajardoArias {
 
-    //public InterImage_198538736_GuajardoArias(int Width, int Height, )
 
     boolean isBitmap();
 
@@ -18,7 +17,7 @@ public interface InterImage_198538736_GuajardoArias {
 
     void crop(int x1, int y1, int x2, int y2);
 
-    //void imgRGBToHex;
+    void imgRGBToHex();
 
     // histogram
 

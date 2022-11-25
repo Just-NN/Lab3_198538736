@@ -22,7 +22,11 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         this.compressedItems = new ArrayList<Pixel_198538736_GuajardoArias>();
     }
 
+    List<Pixel_198538736_GuajardoArias> Pixlist;
+
     // List of pixels
+
+
 
     @Override
     public boolean isBitmap() {
@@ -95,4 +99,12 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
             i.printPix();
         }
     }
+
+    public void imgRGBToHex(){
+        for(Pixel_198538736_GuajardoArias i: this.pixlist){
+            i.pixRGBToHex();
+        }
+    }
+
+
 }

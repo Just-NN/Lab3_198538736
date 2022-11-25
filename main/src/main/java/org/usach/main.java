@@ -43,6 +43,10 @@ public class main {
         System.out.println("--- crop ---");
         myImage.crop(0,0,1,0);
         myImage.printImage();
+
+        Image_198538736_GuajardoArias myImage2 = new Image_198538736_GuajardoArias(2, 2, pixList);
+        myImage2.imgRGBToHex();
+        myImage2.printImage();
     }
 
 
