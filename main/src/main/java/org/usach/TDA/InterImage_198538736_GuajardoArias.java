@@ -25,6 +25,6 @@ public interface InterImage_198538736_GuajardoArias {
 
     void printImage();
 
-
+    void histogram();
 
 }

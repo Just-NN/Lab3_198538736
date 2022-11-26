@@ -2,9 +2,9 @@ package org.usach.TDA;
 
 public class Par_198538736_GuajardoArias {
     String value;
-    int frequency;
+    long frequency;
 
-    public Par_198538736_GuajardoArias(String value, int frequency) {
+    public Par_198538736_GuajardoArias(String value, long frequency) {
         this.value = value;
         this.frequency = frequency;
     }
@@ -17,7 +17,7 @@ public class Par_198538736_GuajardoArias {
         this.value = value;
     }
 
-    public int getFrequency() {
+    public long getFrequency() {
         return frequency;
     }
 
@@ -25,4 +25,19 @@ public class Par_198538736_GuajardoArias {
         this.frequency = frequency;
     }
 
+
+    public boolean equal(String val){
+        if (this.value == val){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "Color'" + value + '\'' +
+                ", Frecuencia: " + frequency +
+                ']';
+    }
 }

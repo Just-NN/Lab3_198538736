@@ -2,39 +2,39 @@ package org.usach.TDA;
 
 public class Pixel_198538736_GuajardoArias{
 
-    public int x;
+    private int x;
 
-    public int y;
+    private int y;
 
-    public int d;
+    private int d;
 
-    public Color_198538736_GuajardoArias Color;
+    private Color_198538736_GuajardoArias color;
 
-    public Pixel_198538736_GuajardoArias(int x, int y, int d, Color_198538736_GuajardoArias Color) {
+    public Pixel_198538736_GuajardoArias(int x, int y, int d, Color_198538736_GuajardoArias color) {
         this.x = x;
         this.y = y;
         this.d = d;
-        this.Color = Color;
+        this.color = color;
     }
 
 
 
     public boolean isBit(){
-        return this.Color.isBit();
+        return this.color.isBit();
     }
 
     public boolean isHex(){
-        return this.Color.isHex();
+        return this.color.isHex();
     }
 
     public boolean isRGB(){
-        return this.Color.isRGB();
+        return this.color.isRGB();
     }
 
 
 
     public void printPix(){
-        System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.Color.toString() + " " + "Depth: " + this.d + "\n");
+        System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.color.toString() + " " + "Depth: " + this.d + "\n");
     }
 
     public void move_pix_h(int width) {
@@ -80,18 +80,37 @@ public class Pixel_198538736_GuajardoArias{
     }
 
     public boolean inRange(int x1, int y1, int x2, int y2){
-        if((this.x >= x1) && (this.x<=x2) && (this.y >= y1) && (this.y<=y2)){
-            return true;
-        }
-        return false;
+        return (this.x >= x1) && (this.x <= x2) && (this.y >= y1) && (this.y <= y2);
     }
 
-    public void pixRGBToHex(){
-        this.Color.rgbToHex();
+    public boolean sameRGB(String rgb){
+        return this.color.sameRGB(rgb);
     }
 
 
     public Color_198538736_GuajardoArias getColor() {
-        return Color;
+        return this.color;
+    }
+
+    public boolean sameColor(Color_198538736_GuajardoArias color1){
+        if(isBit()){
+            return this.color.sameBit(color1.getBit());
+        } else if (isHex()) {
+            return this.color.sameHex(color1.getHex());
+        }
+        else{
+            return this.color.sameRGB(color1.toStringRGB());
+        }
+    }
+
+
+    public Pixel_198538736_GuajardoArias pixRGBToHex() {
+        Color_198538736_GuajardoArias C = this.color.rgbToHex();
+        Pixel_198538736_GuajardoArias P = new Pixel_198538736_GuajardoArias(this.x, this.y, this.d, C);
+        return P;
+    }
+
+    public void setColor(Color_198538736_GuajardoArias color) {
+        this.color = color;
     }
 }

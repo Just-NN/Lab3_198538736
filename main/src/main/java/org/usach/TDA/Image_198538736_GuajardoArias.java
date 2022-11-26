@@ -1,5 +1,6 @@
 package org.usach.TDA;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,13 +8,15 @@ import java.util.stream.Collectors;
 
 public class Image_198538736_GuajardoArias implements InterImage_198538736_GuajardoArias {
 
-    int width;
+    private int width;
 
-    int height;
+    private int height;
 
-    List<Pixel_198538736_GuajardoArias> pixlist;
+    private List<Pixel_198538736_GuajardoArias> pixlist;
 
-    List<Pixel_198538736_GuajardoArias> compressedItems;
+    private List<Pixel_198538736_GuajardoArias> compressedItems;
+
+    private List<Par_198538736_GuajardoArias> histogramaDeRGBaHex;
 
     public Image_198538736_GuajardoArias(int width, int height, List<Pixel_198538736_GuajardoArias> pixlist) {
         this.width = width;
@@ -22,16 +25,13 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         this.compressedItems = new ArrayList<Pixel_198538736_GuajardoArias>();
     }
 
-    List<Pixel_198538736_GuajardoArias> Pixlist;
-
     // List of pixels
-
 
 
     @Override
     public boolean isBitmap() {
-        for(Pixel_198538736_GuajardoArias i : pixlist){
-            if(!i.isBit()){
+        for (Pixel_198538736_GuajardoArias i : pixlist) {
+            if (!i.isBit()) {
                 return false;
             }
         }
@@ -40,8 +40,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isHexmap() {
-        for(Pixel_198538736_GuajardoArias i : pixlist){
-            if(!i.isHex()){
+        for (Pixel_198538736_GuajardoArias i : pixlist) {
+            if (!i.isHex()) {
                 return false;
             }
         }
@@ -50,17 +50,17 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isPixmap() {
-        for(Pixel_198538736_GuajardoArias i : pixlist){
-           if(!i.isRGB()){
-               return false;
-           }
+        for (Pixel_198538736_GuajardoArias i : pixlist) {
+            if (!i.isRGB()) {
+                return false;
+            }
         }
         return true;
     }
 
     @Override
     public boolean isCompressed() {
-        if(width*height == pixlist.size()){
+        if (width * height == pixlist.size()) {
             return true;
         }
         return false;
@@ -68,14 +68,14 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public void flipH() {
-        for(Pixel_198538736_GuajardoArias i : pixlist){
+        for (Pixel_198538736_GuajardoArias i : pixlist) {
             i.move_pix_h(this.width);
         }
     }
 
     @Override
     public void flipV() {
-        for (Pixel_198538736_GuajardoArias i: pixlist){
+        for (Pixel_198538736_GuajardoArias i : pixlist) {
             i.move_pix_v(this.height);
         }
     }
@@ -93,18 +93,54 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     }
 
     @Override
-    public void printImage(){
+    public void printImage() {
         System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
-        for(Pixel_198538736_GuajardoArias i : pixlist){
+        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
             i.printPix();
         }
     }
 
-    public void imgRGBToHex(){
-        for(Pixel_198538736_GuajardoArias i: this.pixlist){
-            i.pixRGBToHex();
+    public void imgRGBToHex() {
+        List<Pixel_198538736_GuajardoArias> list = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias pix : this.pixlist) {
+            Pixel_198538736_GuajardoArias pixi = pix.pixRGBToHex();
+            list.add(pixi);
+        }
+        this.pixlist = list;
+
+    }
+
+    public void countColor() {
+        List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
+
+        List<Color_198538736_GuajardoArias> colores = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias pix : this.pixlist) {
+            if (!colores.contains(pix.getColor())) {
+                colores.add(pix.getColor());
+            }
+        }
+
+        for (Color_198538736_GuajardoArias coloro : colores) {
+            var n = colores.stream()
+                    .filter(colorox -> colorox.sameColor(coloro))
+                    .count();
+            Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(coloro.toString(), n);
+            pares.add(par);
+
+        }
+        this.histogramaDeRGBaHex = pares;
+
+    }
+
+    public void histogram() {
+        countColor();
+        for (Par_198538736_GuajardoArias par : this.histogramaDeRGBaHex) {
+            System.out.println(par.toString());
         }
     }
 
 
+    public List<Pixel_198538736_GuajardoArias> getPixlist() {
+        return pixlist;
+    }
 }

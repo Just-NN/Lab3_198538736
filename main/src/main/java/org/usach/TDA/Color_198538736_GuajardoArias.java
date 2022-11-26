@@ -1,5 +1,7 @@
 package org.usach.TDA;
 
+import java.awt.*;
+
 public class Color_198538736_GuajardoArias {
 
     private int bit;
@@ -22,16 +24,17 @@ public class Color_198538736_GuajardoArias {
     }
 
     public Color_198538736_GuajardoArias(String hex) {
-        this.bit = -1;
         this.hex = hex;
+        this.bit = -1;
         this.r = -1;
         this.g = -1;
         this.b = -1;
     }
 
+
     public String toStringHex() {
         return "Color: " +
-                "hex='" + hex;
+                "hex=" + hex;
     }
 
     public Color_198538736_GuajardoArias(int r, int g, int b) {
@@ -128,12 +131,42 @@ public class Color_198538736_GuajardoArias {
         return true;
     }
 
-    public void rgbToHex(){
-        this.hex = String.format("#%02x%02x%02x", this.r, this.g, this.b);
-        this.r = -1;
-        this.g = -1;
-        this.b = -1;
+    public Color_198538736_GuajardoArias rgbToHex(){
+        Color_198538736_GuajardoArias newC = new Color_198538736_GuajardoArias(this.hex.format("#%02x%02x%02x", this.r, this.g, this.b));
+        return newC;
     }
 
+    public boolean sameBit(int bit){
+        if(getBit() == bit){
+            return true;
+        }
+        return false;
+    }
+    public boolean sameHex(String hex){
+        if(getHex() == hex){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean sameRGB(String rgb){
+        if(toStringRGB() == rgb){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean sameColor(Color_198538736_GuajardoArias C){
+        if(
+                (this.bit == C.getBit()) &&
+                (this.r == C.getR()) &&
+                (this.g == C.getG()) &&
+                (this.b == C.getB()) &&
+                (this.hex == C.getHex())
+        ){
+            return true;
+        }
+        return false;
+    }
 
 }
