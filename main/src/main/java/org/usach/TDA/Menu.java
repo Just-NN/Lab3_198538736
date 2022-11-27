@@ -13,7 +13,7 @@ public class Menu {
 
     private List<Color_198538736_GuajardoArias> colorList;
 
-    public Menu(int option) {
+    public Menu() {
         this.imageList = new ArrayList<>();
         this.pixlist = new ArrayList<>();
         this.colorList = new ArrayList<>();
@@ -50,6 +50,8 @@ public class Menu {
     public void creationMenu(){
 
         Scanner in = new Scanner(System.in);
+        this.pixlist = new ArrayList<>();
+        this.colorList = new ArrayList<>();
 
         System.out.println("Por favor, ingrese largo");
         int W = in.nextInt();
@@ -57,10 +59,10 @@ public class Menu {
         int H = in.nextInt();
         int H1 = 0;
         while (H1 < H){
-            System.out.println("ENTRÓ AL PRIMERO");
+            //System.out.println("ENTRÓ AL PRIMERO");
             int W1 = 0;
             while (W1 < W){
-                System.out.println("ENTRÓ AL SEGUNDO");
+                //System.out.println("ENTRÓ AL SEGUNDO");
                 colorCreation();
                 System.out.println("Por favor, ingrese la profundidad d (cualquier valor entero): ");
                 int d = in.nextInt();
@@ -72,11 +74,10 @@ public class Menu {
             H1++;
         }
 
-        List<Color_198538736_GuajardoArias> newColorList = new ArrayList<>();
-        this.colorList = newColorList;
+        this.colorList = new ArrayList<>();
 
         Image_198538736_GuajardoArias image = new Image_198538736_GuajardoArias(W, H, this.pixlist);
-        imageList.add(image);
+        this.imageList.add(image);
         System.out.println("---------------------------------------------");
     }
 
@@ -124,39 +125,54 @@ public class Menu {
             System.out.println("---------------------------------------------");
         }
         else{
-            System.out.println("En estos momentos, hay " + imageList.size() + " imagenes creadas");
+            System.out.println("En estos momentos, hay " + this.imageList.size() + " imagenes creadas");
             int position = in.nextInt();
-            System.out.println("Por favor, elija la modificacion que quiere hacer a la imagen:");
-            System.out.println("1. Voltear horizontalmente\n2. Voltear verticalmente\n3. Crop\n4. rotate90°\n5. Volver al menu principal");
-            int option = in.nextInt();
-            if(option == 1){
-                imageList.get(position).flipH();
-                imageList.get(position).printImage();
-            } else if (option == 2) {
-                imageList.get(position).flipV();
-                imageList.get(position).printImage();
-            } else if (option == 3) {
-                System.out.println("Por favor, elija un x1 como posicion delimitante de x");
-                int x1 = in.nextInt();
-                System.out.println("Por favor, elija un y1 como posicion delimitante de y");
-                int y1 = in.nextInt();
-                System.out.println("Por favor, elija un x2 como segunda posicion delimitante de x");
-                int x2 = in.nextInt();
-                System.out.println("Por favor, elija un y2 como segunda posicion delimitante de y");
-                int y2 = in.nextInt();
-                imageList.get(position).crop(x1, y1, x2, y2);
-                imageList.get(position).printImage();
-            } else if (option == 4) {
-                System.out.println("Aun no esta implementado lol");
-            } else if (option==5) {
+            if(position > this.imageList.size()){
                 System.out.println("---------------------------------------------");
-                System.out.println("Volviendo al menu...");
+                System.out.println("ERROR404 IMAGE NOT FOUND - RETURNING TO BASE");
                 System.out.println("---------------------------------------------");
             }
             else {
-                System.out.println("---------------------------------------------");
-                System.out.println("FATAL ERROR, RETURNING TO MAIN MENU");
-                System.out.println("---------------------------------------------");
+                System.out.println("Has elegido la imagen:");
+                imageList.get(position-1).printImage();
+                Image_198538736_GuajardoArias newImage;
+                System.out.println("Por favor, elija la modificacion que quiere hacer a la imagen:");
+                System.out.println("1. Voltear horizontalmente\n2. Voltear verticalmente\n3. Crop\n4. rotate90°\n5. Volver al menu principal");
+                int option = in.nextInt();
+                if(option == 1){
+                    newImage = this.imageList.get(position-1).flipH();
+                    this.imageList.add(newImage);
+                    this.imageList.get(this.imageList.size()-1).printImage();
+                } else if (option == 2) {
+
+                    newImage = imageList.get(position-1).flipV();
+                    this.imageList.add(newImage);
+                    this.imageList.get(imageList.size()-1).printImage();
+                } else if (option == 3) {
+                    System.out.println("Por favor, elija un x1 como posicion delimitante de x");
+                    int x1 = in.nextInt();
+                    System.out.println("Por favor, elija un y1 como posicion delimitante de y");
+                    int y1 = in.nextInt();
+                    System.out.println("Por favor, elija un x2 como segunda posicion delimitante de x");
+                    int x2 = in.nextInt();
+                    System.out.println("Por favor, elija un y2 como segunda posicion delimitante de y");
+                    int y2 = in.nextInt();
+                    newImage = this.imageList.get(position-1).crop(x1, y1, x2, y2);
+                    newImage.printImage();
+                    this.imageList.add(newImage);
+                } else if (option == 4) {
+                    System.out.println("Aun no esta implementado lol");
+
+                } else if (option==5) {
+                    System.out.println("---------------------------------------------");
+                    System.out.println("Volviendo al menu...");
+                    System.out.println("---------------------------------------------");
+                }
+                else {
+                    System.out.println("---------------------------------------------");
+                    System.out.println("FATAL ERROR, RETURNING TO MAIN MENU");
+                    System.out.println("---------------------------------------------");
+                }
             }
         }
 
@@ -168,13 +184,13 @@ public class Menu {
         Scanner in = new Scanner(System.in);
         System.out.println("Por favor, ingrese la imagen que quiere visualizar");
         System.out.println("(Si quiere visualizar la 3era, ingrese 3 y siga esa lógica)");
-        System.out.println("En estos momentos, hay " + imageList.size() + " imagenes creadas");
+        System.out.println("En estos momentos, hay " + this.imageList.size() + " imagenes creadas");
         int option = in.nextInt();
         if(option-1 >= imageList.size()){
             System.out.println("ERROR404 IMAGE NOT FOUND");
         }
         else{
-            imageList.get(option-1).printImage();
+            this.imageList.get(option-1).printImage();
         }
     }
 

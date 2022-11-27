@@ -11,11 +11,11 @@ public interface InterImage_198538736_GuajardoArias {
 
     boolean isCompressed();
 
-    void flipH();
+    Image_198538736_GuajardoArias flipH();
 
-    void flipV();
+    Image_198538736_GuajardoArias flipV();
 
-    void crop(int x1, int y1, int x2, int y2);
+    Image_198538736_GuajardoArias crop(int x1, int y1, int x2, int y2);
 
     void imgRGBToHex();
 

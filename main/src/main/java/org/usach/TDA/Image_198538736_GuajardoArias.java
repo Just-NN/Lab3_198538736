@@ -32,7 +32,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isBitmap() {
-        for (Pixel_198538736_GuajardoArias i : pixlist) {
+        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
             if (!i.isBit()) {
                 return false;
             }
@@ -42,7 +42,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isHexmap() {
-        for (Pixel_198538736_GuajardoArias i : pixlist) {
+        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
             if (!i.isHex()) {
                 return false;
             }
@@ -52,7 +52,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isPixmap() {
-        for (Pixel_198538736_GuajardoArias i : pixlist) {
+        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
             if (!i.isRGB()) {
                 return false;
             }
@@ -62,41 +62,47 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public boolean isCompressed() {
-        if (width * height == pixlist.size()) {
+        if (width * height == this.pixlist.size()) {
             return true;
         }
         return false;
     }
 
     @Override
-    public void flipH() {
+    public Image_198538736_GuajardoArias flipH() {
         if(this.width > 0){
-            for (Pixel_198538736_GuajardoArias i : pixlist) {
+            for (Pixel_198538736_GuajardoArias i : this.pixlist) {
                 i.move_pix_h(this.width);
             }
         }
         else{
             System.out.println("Error420 no se puede voltear por su ancho");
         }
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.width, this.height, this.pixlist);
+        return newImage;
     }
 
     @Override
-    public void flipV() {
+    public Image_198538736_GuajardoArias flipV() {
         if(this.height > 0){
-            for (Pixel_198538736_GuajardoArias i : pixlist) {
+            for (Pixel_198538736_GuajardoArias i : this.pixlist) {
                 i.move_pix_v(this.width);
             }
         }
         else{
             System.out.println("Error420 no se puede voltear por su largo");
         }
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.width, this.height, this.pixlist);
+        return newImage;
     }
 
     @Override
-    public void crop(int x1, int y1, int x2, int y2) {
+    public Image_198538736_GuajardoArias crop(int x1, int y1, int x2, int y2) {
         this.pixlist = this.pixlist.stream()
                 .filter(pix -> pix.inRange(x1, y1, x2, y2))
                 .collect(Collectors.toList());
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(x2-x1+1, y2-y1+1, this.pixlist);
+        return newImage;
     }
 
     @Override
@@ -118,7 +124,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         for (Pixel_198538736_GuajardoArias pix : this.pixlist) {
             Pixel_198538736_GuajardoArias pixi = pix.pixRGBToHex();
             list.add(pixi);
-            for (Par_198538736_GuajardoArias par : histogramaDeRGBaHex.toArray(new Par_198538736_GuajardoArias[0])){
+            for (Par_198538736_GuajardoArias par : this.histogramaDeRGBaHex.toArray(new Par_198538736_GuajardoArias[0])){
                 if(pix.getColor().toStringRGB() == par.getValue()){
                     par.setValue(pixi.getColor().getHex());
                 }

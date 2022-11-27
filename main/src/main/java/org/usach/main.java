@@ -109,8 +109,8 @@ public class main {
         myImage4.histogram();
         System.out.println(myImage2.isHexmap());
 
-        Menu awa = new Menu(1);
-        //awa.displayMainMenu();
+        Menu awa = new Menu();
+        awa.displayMainMenu();
 
     }
 
