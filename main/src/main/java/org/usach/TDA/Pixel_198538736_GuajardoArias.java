@@ -38,20 +38,30 @@ public class Pixel_198538736_GuajardoArias{
     }
 
     public void move_pix_h(int width) {
-        if(x+1>=width){
-            setX(0);
+        if(width > 1){
+            if(x+1>=width){
+                setX(0);
+            }
+            else{
+                setX(x+1);
+            }
         }
         else{
-            setX(x+1);
+            System.out.println("ERROR 420 no se puede voltear por su ancho");
         }
     }
 
     public void move_pix_v(int height) {
-        if(x+1>=height){
-            setY(0);
+        if(height > 0){
+            if(x+1>=height){
+                setY(0);
+            }
+            else{
+                setY(y+1);
+            }
         }
         else{
-            setY(y+1);
+            System.out.println("ERROR 420 no se puede voltear por su largo");
         }
     }
 

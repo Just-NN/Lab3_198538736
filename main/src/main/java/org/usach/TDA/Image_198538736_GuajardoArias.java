@@ -2,7 +2,9 @@ package org.usach.TDA;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -68,15 +70,25 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     @Override
     public void flipH() {
-        for (Pixel_198538736_GuajardoArias i : pixlist) {
-            i.move_pix_h(this.width);
+        if(this.width > 0){
+            for (Pixel_198538736_GuajardoArias i : pixlist) {
+                i.move_pix_h(this.width);
+            }
+        }
+        else{
+            System.out.println("Error420 no se puede voltear por su ancho");
         }
     }
 
     @Override
     public void flipV() {
-        for (Pixel_198538736_GuajardoArias i : pixlist) {
-            i.move_pix_v(this.height);
+        if(this.height > 0){
+            for (Pixel_198538736_GuajardoArias i : pixlist) {
+                i.move_pix_v(this.width);
+            }
+        }
+        else{
+            System.out.println("Error420 no se puede voltear por su largo");
         }
     }
 
@@ -102,13 +114,90 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     public void imgRGBToHex() {
         List<Pixel_198538736_GuajardoArias> list = new ArrayList<>();
+        countColor();
         for (Pixel_198538736_GuajardoArias pix : this.pixlist) {
             Pixel_198538736_GuajardoArias pixi = pix.pixRGBToHex();
             list.add(pixi);
+            for (Par_198538736_GuajardoArias par : histogramaDeRGBaHex.toArray(new Par_198538736_GuajardoArias[0])){
+                if(pix.getColor().toStringRGB() == par.getValue()){
+                    par.setValue(pixi.getColor().getHex());
+                }
+            }
         }
         this.pixlist = list;
 
+
     }
+
+    public void countBit() {
+        List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
+
+        List<Integer> bits = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias bit : this.pixlist) {
+            if (!bits.contains(bit.getColor())) {
+                bits.add(bit.getColor().getBit());
+            }
+        }
+
+        for (Integer bit : bits) {
+            var n = bits.stream()
+                    .filter(bito -> equals(bit))
+                    .count();
+
+            Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(bit.toString(), n);
+            pares.add(par);
+
+        }
+        this.histogramaDeRGBaHex = pares;
+
+    }
+
+    public void countRGB() {
+        List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
+
+        List<String> rgbs = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias rgb : this.pixlist) {
+            if (!rgbs.contains(rgb.getColor())) {
+                rgbs.add(rgb.getColor().toStringRGB());
+            }
+        }
+
+        for (String rgb : rgbs) {
+            var n = rgbs.stream()
+                    .filter(rgbo -> equals(rgb))
+                    .count();
+
+            Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(rgb, n);
+            pares.add(par);
+
+        }
+        this.histogramaDeRGBaHex = pares;
+
+    }
+
+    public void countHex() {
+        List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
+
+        List<String> hexs = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias hex : this.pixlist) {
+            if (!hexs.contains(hex.getColor())) {
+                hexs.add(hex.getColor().getHex());
+            }
+        }
+
+        for (String hex: hexs) {
+            var n = hexs.stream()
+                    .filter(hexo -> equals(hex))
+                    .count();
+
+            Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(hex, n);
+            pares.add(par);
+
+        }
+        this.histogramaDeRGBaHex = pares;
+
+    }
+
 
     public void countColor() {
         List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
@@ -119,16 +208,33 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
                 colores.add(pix.getColor());
             }
         }
+        colores = colores.stream()
+                .distinct()
+                .collect(Collectors.toList());
 
         for (Color_198538736_GuajardoArias coloro : colores) {
             var n = colores.stream()
                     .filter(colorox -> colorox.sameColor(coloro))
                     .count();
             Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(coloro.toString(), n);
-            pares.add(par);
+            if(!pares.contains(par)){
+                pares.add(par);
+            }
+            pares = pares.stream()
+                    .distinct()
+                    .collect(Collectors.toList());
+
 
         }
+        System.out.println("HAAAA");
+
+        System.out.println(pares.get(0).toString());
+        System.out.println("HAAAA");
         this.histogramaDeRGBaHex = pares;
+
+
+
+
 
     }
 
