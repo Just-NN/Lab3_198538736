@@ -17,11 +17,11 @@ public interface InterImage_198538736_GuajardoArias {
 
     Image_198538736_GuajardoArias crop(int x1, int y1, int x2, int y2);
 
-    void imgRGBToHex();
+    Image_198538736_GuajardoArias imgRGBToHex();
 
     // histogram
 
-    void rotate90();
+    Image_198538736_GuajardoArias rotate90();
 
     void printImage();
 

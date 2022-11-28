@@ -105,4 +105,15 @@ public class Pixel_198538736_GuajardoArias{
     public void setColor(Color_198538736_GuajardoArias color) {
         this.color = color;
     }
+
+    public Pixel_198538736_GuajardoArias swapPositions(){
+        int newX = this.y;
+        int newY = this.x;
+        System.out.println("PIXEL ANTES DEL SWAP");
+        printPix();
+        Pixel_198538736_GuajardoArias newPix = new Pixel_198538736_GuajardoArias( newX, newY, this.d, this.color);
+        System.out.println("Nuevo pixel swapeado");
+        newPix.printPix();
+        return newPix;
+    }
 }

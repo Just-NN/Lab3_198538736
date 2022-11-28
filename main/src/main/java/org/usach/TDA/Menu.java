@@ -66,7 +66,7 @@ public class Menu {
                 colorCreation();
                 System.out.println("Por favor, ingrese la profundidad d (cualquier valor entero): ");
                 int d = in.nextInt();
-                Pixel_198538736_GuajardoArias pix = new Pixel_198538736_GuajardoArias(W1, H1, d, this.colorList.get(H1+W1));
+                Pixel_198538736_GuajardoArias pix = new Pixel_198538736_GuajardoArias(W1, H1, d, this.colorList.get(this.colorList.size()-1));
                 //pix.printPix();
                 this.pixlist.add(pix);
                 W1++;
@@ -104,9 +104,9 @@ public class Menu {
             int r, g, b;
             System.out.println("Por favor, ingrese un valor para R (entre 0 y 255): ");
             r = in.nextInt();
-            System.out.println("Por favor, ingrese un valor para R (entre 0 y 255): ");
+            System.out.println("Por favor, ingrese un valor para G (entre 0 y 255): ");
             g = in.nextInt();
-            System.out.println("Por favor, ingrese un valor para R (entre 0 y 255): ");
+            System.out.println("Por favor, ingrese un valor para B (entre 0 y 255): ");
             b = in.nextInt();
             c = new Color_198538736_GuajardoArias(r, g, b);
             this.colorList.add(c);
@@ -137,7 +137,7 @@ public class Menu {
                 imageList.get(position-1).printImage();
                 Image_198538736_GuajardoArias newImage;
                 System.out.println("Por favor, elija la modificacion que quiere hacer a la imagen:");
-                System.out.println("1. Voltear horizontalmente\n2. Voltear verticalmente\n3. Crop\n4. rotate90°\n5. Volver al menu principal");
+                System.out.println("1. Voltear horizontalmente\n2. Voltear verticalmente\n3. Crop\n4. rgbToHex\n5. rotate90°\n6. Volver al menu principal");
                 int option = in.nextInt();
                 if(option == 1){
                     newImage = this.imageList.get(position-1).flipH();
@@ -161,9 +161,18 @@ public class Menu {
                     newImage.printImage();
                     this.imageList.add(newImage);
                 } else if (option == 4) {
-                    System.out.println("Aun no esta implementado lol");
+                    if(this.imageList.get(position-1).isPixmap()){
+                        this.imageList.add(this.imageList.get(position-1).imgRGBToHex());
+                        this.imageList.get(position-1).imgRGBToHex().printImage();
+                    }
+                    else{
+                        System.out.println("DEBE SER UNA IMAGEN RGB PARA SER CONVERTIDA A HEX :P");
+                    }
 
-                } else if (option==5) {
+                } else if (option == 5) {
+                    this.imageList.add(this.imageList.get(position-1).rotate90());
+                    this.imageList.get(position-1).rotate90().printImage();
+                } else if (option==6) {
                     System.out.println("---------------------------------------------");
                     System.out.println("Volviendo al menu...");
                     System.out.println("---------------------------------------------");

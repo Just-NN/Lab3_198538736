@@ -19,7 +19,7 @@ public class main {
 
         List<Pixel_198538736_GuajardoArias> pixList = new ArrayList<Pixel_198538736_GuajardoArias>();
         Pixel_198538736_GuajardoArias PA = new Pixel_198538736_GuajardoArias(0, 0, 1, myColor1);
-        Pixel_198538736_GuajardoArias PB = new Pixel_198538736_GuajardoArias(1, 0, 1, myColor2);
+        Pixel_198538736_GuajardoArias PB = new Pixel_198538736_GuajardoArias(1, 0, 2, myColor2);
         Pixel_198538736_GuajardoArias PC = new Pixel_198538736_GuajardoArias(0, 1, 1, myColor3);
         Pixel_198538736_GuajardoArias PD = new Pixel_198538736_GuajardoArias(1, 1, 1, myColor4);
         pixList.add(PA);
@@ -39,8 +39,8 @@ public class main {
         }
 
         System.out.println("--- Post flipH ---");
-        myImage.flipH();
-        myImage.printImage();
+        Image_198538736_GuajardoArias myFlipHImage = myImage.flipV();
+        myFlipHImage.printImage();
 
         System.out.println("--- crop ---");
         myImage.crop(0,0,1,0);
@@ -110,6 +110,9 @@ public class main {
         System.out.println(myImage2.isHexmap());
 
         Menu awa = new Menu();
+        myImage2.rotate90().printImage();
+
+
         awa.displayMainMenu();
 
     }

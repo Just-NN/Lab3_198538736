@@ -105,10 +105,6 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         return newImage;
     }
 
-    @Override
-    public void rotate90() {
-
-    }
 
     @Override
     public void printImage() {
@@ -118,7 +114,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         }
     }
 
-    public void imgRGBToHex() {
+    public Image_198538736_GuajardoArias imgRGBToHex() {
         List<Pixel_198538736_GuajardoArias> list = new ArrayList<>();
         countColor();
         for (Pixel_198538736_GuajardoArias pix : this.pixlist) {
@@ -130,7 +126,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
                 }
             }
         }
-        this.pixlist = list;
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.width, this.height, list);
+        return newImage;
 
 
     }
@@ -254,5 +251,24 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     public List<Pixel_198538736_GuajardoArias> getPixlist() {
         return pixlist;
+    }
+
+    public List<Pixel_198538736_GuajardoArias> traversePixlist(){
+        List<Pixel_198538736_GuajardoArias> newPixlist = new ArrayList<>();
+        for (Pixel_198538736_GuajardoArias i : this.pixlist){
+            newPixlist.add(i.swapPositions());
+        }
+        return newPixlist;
+
+    }
+
+    @Override
+    public Image_198538736_GuajardoArias rotate90(){
+        List<Pixel_198538736_GuajardoArias> newPixlist = traversePixlist();
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.height, this.width, newPixlist);
+        System.out.println("Post traverse:");
+        newImage.printImage();
+        newImage = newImage.flipV();
+        return newImage;
     }
 }
