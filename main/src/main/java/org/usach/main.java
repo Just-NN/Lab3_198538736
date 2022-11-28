@@ -10,7 +10,7 @@ public class main {
     public static void main(String[] args) {
 
 
-        System.out.println("--- Antes del flipH ---");
+       /* System.out.println("--- Antes del flipH ---");
 
         Color_198538736_GuajardoArias myColor1 = new Color_198538736_GuajardoArias(1, 244, 255);
         Color_198538736_GuajardoArias myColor2 = new Color_198538736_GuajardoArias(1, 244, 255);
@@ -107,11 +107,9 @@ public class main {
 
         System.out.println("HISTOGRAMA 4");
         myImage4.histogram();
-        System.out.println(myImage2.isHexmap());
+        System.out.println(myImage2.isHexmap()); */
 
         Menu awa = new Menu();
-        myImage2.rotate90().printImage();
-
 
         awa.displayMainMenu();
 

@@ -1,6 +1,5 @@
 package org.usach.TDA;
 
-import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -40,7 +39,7 @@ public class Menu {
                 visualizationMenu();
             }
             else{
-                System.out.println("Gracias, vuelva pronto 😎");
+                System.out.println("Gracias, vuelva pronto :x");
                 flag = 0;
             }
 
@@ -86,7 +85,7 @@ public class Menu {
         Scanner in = new Scanner(System.in);
         Color_198538736_GuajardoArias c;
         System.out.println("Por favor, elija el tipo de color:\n");
-        System.out.println("1. Bit\n2.Hex\n3.RGB\nOpcion: ");
+        System.out.println("1. Bit\n2. Hex\n3. RGB\nOpcion: ");
         option2 = in.nextInt();
         if (option2 == 1){
             int bit;
@@ -199,7 +198,19 @@ public class Menu {
             System.out.println("ERROR404 IMAGE NOT FOUND");
         }
         else{
-            this.imageList.get(option-1).printImage();
+            System.out.println("Por favor, elija la opcion para visualizar su imagen:\n1. Imagen\n2. Histograma");
+            int option2 = in.nextInt();
+            if (option2 == 1){
+                this.imageList.get(option-1).printImage();
+            } else if (option2 == 2) {
+
+                this.imageList.get(option-1).histogram();
+            }
+            else{
+                System.out.println("---------------------------------------------");
+                System.out.println("FATAL ERROR, RETURNING TO MAIN MENU");
+                System.out.println("---------------------------------------------");
+            }
         }
     }
 

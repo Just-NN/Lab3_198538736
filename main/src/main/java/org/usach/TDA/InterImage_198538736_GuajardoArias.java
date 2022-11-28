@@ -9,8 +9,6 @@ public interface InterImage_198538736_GuajardoArias {
 
     boolean isPixmap();
 
-    boolean isCompressed();
-
     Image_198538736_GuajardoArias flipH();
 
     Image_198538736_GuajardoArias flipV();

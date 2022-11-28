@@ -1,6 +1,7 @@
 package org.usach.TDA;
 
-import java.awt.*;
+import java.util.List;
+import java.util.Objects;
 
 public class Color_198538736_GuajardoArias {
 
@@ -49,40 +50,20 @@ public class Color_198538736_GuajardoArias {
         return bit;
     }
 
-    public void setBit(int bit) {
-        this.bit = bit;
-    }
-
     public String getHex() {
         return hex;
-    }
-
-    public void setHex(String hex) {
-        this.hex = hex;
     }
 
     public int getR() {
         return r;
     }
 
-    public void setR(int r) {
-        this.r = r;
-    }
-
     public int getG() {
         return g;
     }
 
-    public void setG(int g) {
-        this.g = g;
-    }
-
     public int getB() {
         return b;
-    }
-
-    public void setB(int b) {
-        this.b = b;
     }
 
 
@@ -112,60 +93,36 @@ public class Color_198538736_GuajardoArias {
     }
 
     public boolean isBit(){
-        if(this.bit == -1){
-            return false;
-        }
-        return true;
+        return this.bit != -1;
     }
 
     public boolean isHex(){
-        if(this.hex == ""){
-            return false;
-        }
-        return true;
+        return !this.hex.equals("");
     }
     public boolean isRGB(){
-        if((this.r == -1) && (this.g ==-1) && (this.b == -1)){
-            return false;
-        }
-        return true;
+        return (this.r != -1) || (this.g != -1) || (this.b != -1);
     }
 
     public Color_198538736_GuajardoArias rgbToHex(){
-        Color_198538736_GuajardoArias newC = new Color_198538736_GuajardoArias(this.hex.format("#%02x%02x%02x", this.r, this.g, this.b));
-        return newC;
+        return new Color_198538736_GuajardoArias(this.hex.format("#%02x%02x%02x", this.r, this.g, this.b));
     }
 
     public boolean sameBit(int bit){
-        if(getBit() == bit){
-            return true;
-        }
-        return false;
+        return getBit() == bit;
     }
     public boolean sameHex(String hex){
-        if(getHex() == hex){
-            return true;
-        }
-        return false;
+        return Objects.equals(getHex(), hex);
     }
 
     public boolean sameRGB(String rgb){
-        if(toStringRGB() == rgb){
-            return true;
-        }
-        return false;
+        return Objects.equals(toStringRGB(), rgb);
     }
 
-    public boolean sameColor(Color_198538736_GuajardoArias C){
-        if(
-                (this.bit == C.getBit()) &&
-                (this.r == C.getR()) &&
-                (this.g == C.getG()) &&
-                (this.b == C.getB()) &&
-                (this.hex == C.getHex())
-        ){
-            return true;
-        }
-        return false;
+    public boolean sameColor(Color_198538736_GuajardoArias c){
+        return (this.bit == c.getBit()) &&
+                (this.r == c.getR()) &&
+                (this.g == c.getG()) &&
+                (this.b == c.getB()) &&
+                (Objects.equals(this.hex, c.getHex()));
     }
 }
