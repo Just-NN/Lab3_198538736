@@ -88,12 +88,6 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
 
     @Override
-    public void printImage() {
-        System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
-        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
-            i.printPix();
-        }
-    }
 
     public Image_198538736_GuajardoArias imgRGBToHex() {
         List<Pixel_198538736_GuajardoArias> list = new ArrayList<>();
@@ -107,6 +101,34 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     }
 
+
+
+
+    public void histogram() {
+        List<Par_198538736_GuajardoArias> histograma = countColor();
+        for (Par_198538736_GuajardoArias par : histograma) {
+            System.out.println(par.toString());
+        }
+    }
+
+
+    @Override
+    public Image_198538736_GuajardoArias rotate90(){
+        List<Pixel_198538736_GuajardoArias> newPixlist = traversePixlist();
+        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.height, this.width, newPixlist);
+        System.out.println("Post traverse:");
+        newImage.printImage();
+        newImage = newImage.flipV();
+        return newImage;
+    }
+
+    @Override
+    public void printImage() {
+        System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
+        for (Pixel_198538736_GuajardoArias i : this.pixlist) {
+            i.printPix();
+        }
+    }
 
     public List<Par_198538736_GuajardoArias> countColor() {
         List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
@@ -123,24 +145,12 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
                     .filter(colorox -> colorox.sameColor(coloro))
                     .count();
             Par_198538736_GuajardoArias par = new Par_198538736_GuajardoArias(coloro.toString(), n);
-                pares.add(par);
+            pares.add(par);
         }
 
         return pares;
 
-
-
-
-
     }
-
-    public void histogram() {
-        List<Par_198538736_GuajardoArias> histograma = countColor();
-        for (Par_198538736_GuajardoArias par : histograma) {
-            System.out.println(par.toString());
-        }
-    }
-
 
     public List<Pixel_198538736_GuajardoArias> traversePixlist(){
         List<Pixel_198538736_GuajardoArias> newPixlist = new ArrayList<>();
@@ -149,15 +159,5 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         }
         return newPixlist;
 
-    }
-
-    @Override
-    public Image_198538736_GuajardoArias rotate90(){
-        List<Pixel_198538736_GuajardoArias> newPixlist = traversePixlist();
-        Image_198538736_GuajardoArias newImage = new Image_198538736_GuajardoArias(this.height, this.width, newPixlist);
-        System.out.println("Post traverse:");
-        newImage.printImage();
-        newImage = newImage.flipV();
-        return newImage;
     }
 }

@@ -10,13 +10,5 @@ public class Par_198538736_GuajardoArias {
     }
 
 
-    @Override
-    public String toString() {
-        return "[" +
-                "Color'" + value + '\'' +
-                ", Frecuencia: " + frequency +
-                ']';
-    }
-
 
 }

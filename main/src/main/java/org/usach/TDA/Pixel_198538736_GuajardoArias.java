@@ -18,6 +18,9 @@ public class Pixel_198538736_GuajardoArias{
     }
 
 
+    public Color_198538736_GuajardoArias getColor() {
+        return this.color;
+    }
 
     public boolean isBit(){
         return this.color.isBit();
@@ -31,20 +34,8 @@ public class Pixel_198538736_GuajardoArias{
         return this.color.isRGB();
     }
 
-
-
-    public void printPix(){
-        System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.color.toString() + " " + "Depth: " + this.d + "\n");
-    }
-
-    public void move_pix_h(int width) {
-        int width1 = width-1-this.x;
-        setX(width1);
-    }
-
-    public void move_pix_v(int height) {
-        int height1 = height-1-this.y;
-        setY(height1);
+    public boolean inRange(int x1, int y1, int x2, int y2){
+        return (this.x >= x1) && (this.x <= x2) && (this.y >= y1) && (this.y <= y2);
     }
 
     public void setX(int x) {
@@ -54,16 +45,6 @@ public class Pixel_198538736_GuajardoArias{
     public void setY(int y) {
         this.y = y;
     }
-
-    public boolean inRange(int x1, int y1, int x2, int y2){
-        return (this.x >= x1) && (this.x <= x2) && (this.y >= y1) && (this.y <= y2);
-    }
-
-
-    public Color_198538736_GuajardoArias getColor() {
-        return this.color;
-    }
-
 
     public Pixel_198538736_GuajardoArias pixRGBToHex() {
         Color_198538736_GuajardoArias C = this.color.rgbToHex();
@@ -80,4 +61,22 @@ public class Pixel_198538736_GuajardoArias{
         newPix.printPix();
         return newPix;
     }
+
+
+    public void move_pix_h(int width) {
+        int width1 = width-1-this.x;
+        setX(width1);
+    }
+
+    public void move_pix_v(int height) {
+        int height1 = height-1-this.y;
+        setY(height1);
+    }
+
+    public void printPix(){
+        System.out.println("X: " + this.x + " " + "Y: " + this.y + " " + this.color.toString() + " " + "Depth: " + this.d + "\n");
+    }
+
+
+
 }
