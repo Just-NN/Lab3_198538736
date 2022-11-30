@@ -1,8 +1,15 @@
 package org.usach.TDA;
 
+
+/* la interfaz Inter-Image establece qué métodos deben implementarse para
+    la imagen, que serían los requisitos funcionales de
+ */
+
 public interface InterImage_198538736_GuajardoArias {
 
 
+
+    // Todos los métodos de acá están implementados en Image y se explica ahí mismo para qué sirven
     boolean isBitmap();
 
     boolean isHexmap();

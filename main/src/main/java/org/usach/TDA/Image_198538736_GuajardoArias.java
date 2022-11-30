@@ -4,24 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*  Clase imagen, permite representar las imágenes que se quieren trabajar
+ */
 
 public class Image_198538736_GuajardoArias implements InterImage_198538736_GuajardoArias {
 
+    // atributos de la imagen
+    // width representa al ancho de la imagen y se usará para insertar la cantidad adecuada de pixeles en el eje x
     private int width;
 
+    // height representa el largo de la imagen y se usa igual que width, pero para el eje y
     private int height;
 
+    // lista de pixeles que contendrá los pixeles que se vayan insertando en la imagen
     private List<Pixel_198538736_GuajardoArias> pixlist;
 
+
+    // connstructor que crea una imagen a partir de las dimensiones dadas y la lista de pixeles
     public Image_198538736_GuajardoArias(int width, int height, List<Pixel_198538736_GuajardoArias> pixlist) {
         this.width = width;
         this.height = height;
         this.pixlist = pixlist;
     }
 
-    // List of pixels
-
-
+    // checkers para comprobar a qué tipo de imagen corresponde
     @Override
     public boolean isBitmap() {
         for (Pixel_198538736_GuajardoArias i : this.pixlist) {
@@ -52,6 +58,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         return true;
     }
 
+
+    // método que permite voltear horizontalmente la imagen
     @Override
     public Image_198538736_GuajardoArias flipH() {
         if(this.width > 0){
@@ -65,6 +73,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         return new Image_198538736_GuajardoArias(this.width, this.height, this.pixlist);
     }
 
+
+    // método que permite voltear verticalmente la imagen
     @Override
     public Image_198538736_GuajardoArias flipV() {
         if(this.height > 0){
@@ -78,6 +88,9 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         return new Image_198538736_GuajardoArias(this.width, this.height, this.pixlist);
     }
 
+
+    // método que permite recortar la imagen a partir de las coordenadas dadas
+    // checkeando qué pixeles están dentro del rango generado por las coordenadas
     @Override
     public Image_198538736_GuajardoArias crop(int x1, int y1, int x2, int y2) {
         this.pixlist = this.pixlist.stream()
@@ -87,6 +100,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     }
 
 
+
+    // método que crea una imagen hex a partir de una rgb
     @Override
 
     public Image_198538736_GuajardoArias imgRGBToHex() {
@@ -103,7 +118,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
 
 
-
+    // método que permite contar cuántas veces aparece cada color en la imagen
+    // y muestra los valores junto a sus frecuencias
     public void histogram() {
         List<Par_198538736_GuajardoArias> histograma = countColor();
         for (Par_198538736_GuajardoArias par : histograma) {
@@ -112,6 +128,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     }
 
 
+    // rotate90 permite rotar la imagen en 90°, por medio de transponer las posiciones y luego voltearlas
     @Override
     public Image_198538736_GuajardoArias rotate90(){
         List<Pixel_198538736_GuajardoArias> newPixlist = traversePixlist();
@@ -122,6 +139,7 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         return newImage;
     }
 
+    // printImage permite imprimir ancho, largo y cada pixel dentro de la lista
     @Override
     public void printImage() {
         System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
@@ -130,6 +148,9 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
         }
     }
 
+
+    // countColor permite contar los colores repetidos en la imagen
+    // se usa para el método de histograma
     public List<Par_198538736_GuajardoArias> countColor() {
         List<Par_198538736_GuajardoArias> pares = new ArrayList<>();
 
@@ -152,6 +173,8 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
 
     }
 
+    // traversePixlist sirve para transponer las posiciones de los pixeles en una lista
+    // se usa para el método rotate90
     public List<Pixel_198538736_GuajardoArias> traversePixlist(){
         List<Pixel_198538736_GuajardoArias> newPixlist = new ArrayList<>();
         for (Pixel_198538736_GuajardoArias i : this.pixlist){

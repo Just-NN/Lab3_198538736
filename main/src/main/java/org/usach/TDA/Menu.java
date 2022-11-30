@@ -4,14 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+/*
+La clase menu sirve para mostrar todas las opciones
+y permitir que el usuario interactúe con objetos
+ */
 public class Menu {
 
+    // sus atributos permiten conservar los objetos manipulados mientras el programa corre
+    // imageList permite almacenar las imágenes
     private List<Image_198538736_GuajardoArias> imageList;
 
+    // pixlist permite disponer los pixeles para crear cada imagen y se vacía posterior a eso
     private List<Pixel_198538736_GuajardoArias> pixlist;
 
+    // similar a pixlist, colorList permite disponer los colores para crear cada pixel antes de usarlos en una imagen
     private List<Color_198538736_GuajardoArias> colorList;
 
+    // permite instanciar el menu y así trabajar con él
     public Menu() {
         this.imageList = new ArrayList<>();
         this.pixlist = new ArrayList<>();
@@ -19,6 +29,8 @@ public class Menu {
     }
 
 
+    // los siguientes métodos permiten visualizar cada tipo de menu y elegir sus opciones de acuerdo a lo que
+    // desee el usuario
     public void displayMainMenu(){
         int flag = 1;
         do {
