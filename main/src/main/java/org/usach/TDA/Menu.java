@@ -5,32 +5,45 @@ import java.util.List;
 import java.util.Scanner;
 
 
-/*
-La clase menu sirve para mostrar todas las opciones
-y permitir que el usuario interactúe con objetos
+/**
+ * La clase menu sirve para mostrar todas las opciones
+ * y permitir que el usuario interactúe con objetos
  */
 public class Menu {
 
     // sus atributos permiten conservar los objetos manipulados mientras el programa corre
-    // imageList permite almacenar las imágenes
+    /**
+     * imageList permite almacenar las imágenes
+     */
     private List<Image_198538736_GuajardoArias> imageList;
 
-    // pixlist permite disponer los pixeles para crear cada imagen y se vacía posterior a eso
+    /**
+     * pixlist permite disponer los pixeles para crear cada imagen y se vacía posterior a eso
+     */
     private List<Pixel_198538736_GuajardoArias> pixlist;
 
-    // similar a pixlist, colorList permite disponer los colores para crear cada pixel antes de usarlos en una imagen
+    /**
+     * similar a pixlist, colorList permite disponer los colores para crear cada pixel antes de usarlos en una imagen
+     */
     private List<Color_198538736_GuajardoArias> colorList;
 
-    // permite instanciar el menu y así trabajar con él
+    /**
+     * permite instanciar el menu y así trabajar con él
+     */
     public Menu() {
         this.imageList = new ArrayList<>();
         this.pixlist = new ArrayList<>();
         this.colorList = new ArrayList<>();
+        startImageList();
     }
 
 
     // los siguientes métodos permiten visualizar cada tipo de menu y elegir sus opciones de acuerdo a lo que
     // desee el usuario
+
+    /**
+     * Método que muestra el menú principal y sus interacciones
+     */
     public void displayMainMenu(){
         int flag = 1;
         do {
@@ -58,6 +71,10 @@ public class Menu {
         }while(flag!=0);
 
     }
+
+    /**
+     * Método que muestra el menú de creación y sus interacciones
+     */
     public void creationMenu(){
 
         Scanner in = new Scanner(System.in);
@@ -92,6 +109,9 @@ public class Menu {
         System.out.println("---------------------------------------------");
     }
 
+    /**
+     * Método que muestra el menú de creación para el color y el pixel
+     */
     public void colorCreation(){
         int option2;
         Scanner in = new Scanner(System.in);
@@ -124,6 +144,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Método que muestra el menú de modificaciones y sus interacciones
+     */
     public void modMenu(){
         Scanner in = new Scanner(System.in);
         System.out.println("Por favor, ingrese la imagen que quiere modificar");
@@ -200,6 +223,9 @@ public class Menu {
 
     }
 
+    /**
+     * Método que muestra el menú de visualización y sus interacciones
+     */
     public void visualizationMenu(){
         Scanner in = new Scanner(System.in);
         System.out.println("Por favor, ingrese la imagen que quiere visualizar");
@@ -224,6 +250,66 @@ public class Menu {
                 System.out.println("---------------------------------------------");
             }
         }
+
+
+
+    }
+
+    /**
+     * Método que crea y agrega los pixeles por defecto a la lista
+     */
+    void startImageList(){
+        // AQUI EMPIEZO A HACER LOS PIXELES DE PRUEBA
+        Color_198538736_GuajardoArias myColor1 = new Color_198538736_GuajardoArias(1, 244, 255);
+        Color_198538736_GuajardoArias myColor2 = new Color_198538736_GuajardoArias(1, 244, 255);
+        Color_198538736_GuajardoArias myColor3 = new Color_198538736_GuajardoArias(24, 26, 21);
+        Color_198538736_GuajardoArias myColor4 = new Color_198538736_GuajardoArias(1, 1, 1);
+        Color_198538736_GuajardoArias myColor5 = new Color_198538736_GuajardoArias("#05F6AB");
+        Color_198538736_GuajardoArias myColor6 = new Color_198538736_GuajardoArias("#01F4FF");
+        Color_198538736_GuajardoArias myColor7 = new Color_198538736_GuajardoArias("#10F8CD");
+        Color_198538736_GuajardoArias myColor8 = new Color_198538736_GuajardoArias("#013AEA");
+        Color_198538736_GuajardoArias myColor9 = new Color_198538736_GuajardoArias(1);
+        Color_198538736_GuajardoArias myColor10 = new Color_198538736_GuajardoArias(0);
+        Color_198538736_GuajardoArias myColor11 = new Color_198538736_GuajardoArias(1);
+        Color_198538736_GuajardoArias myColor12 = new Color_198538736_GuajardoArias(0);
+
+        // AQUI CREO LAS LISTAS DE PIXELES PARA CONSTRUIR IMAGENES DESPUES
+        // RGB
+        List<Pixel_198538736_GuajardoArias> pixList2 = new ArrayList<Pixel_198538736_GuajardoArias>();
+        Pixel_198538736_GuajardoArias PA = new Pixel_198538736_GuajardoArias(0, 0, 1, myColor1);
+        Pixel_198538736_GuajardoArias PB = new Pixel_198538736_GuajardoArias(1, 0, 2, myColor2);
+        Pixel_198538736_GuajardoArias PC = new Pixel_198538736_GuajardoArias(0, 1, 1, myColor3);
+        Pixel_198538736_GuajardoArias PD = new Pixel_198538736_GuajardoArias(1, 1, 1, myColor4);
+        pixList2.add(PA);
+        pixList2.add(PB);
+        pixList2.add(PC);
+        pixList2.add(PD);
+        Image_198538736_GuajardoArias myImage = new Image_198538736_GuajardoArias(2, 2, pixList2);
+        this.imageList.add(myImage);
+        // HEX
+        List<Pixel_198538736_GuajardoArias> pixList3 = new ArrayList<Pixel_198538736_GuajardoArias>();
+        Pixel_198538736_GuajardoArias PE = new Pixel_198538736_GuajardoArias(0, 0, 1, myColor5);
+        Pixel_198538736_GuajardoArias PF = new Pixel_198538736_GuajardoArias(1, 0, 1, myColor6);
+        Pixel_198538736_GuajardoArias PG = new Pixel_198538736_GuajardoArias(0, 1, 1, myColor7);
+        Pixel_198538736_GuajardoArias PH = new Pixel_198538736_GuajardoArias(1, 1, 1, myColor8);
+        pixList3.add(PE);
+        pixList3.add(PF);
+        pixList3.add(PG);
+        pixList3.add(PH);
+        Image_198538736_GuajardoArias myImage3 = new Image_198538736_GuajardoArias(2, 2, pixList3);
+        this.imageList.add(myImage3);
+        // BIT
+        List<Pixel_198538736_GuajardoArias> pixList4 = new ArrayList<Pixel_198538736_GuajardoArias>();
+        Pixel_198538736_GuajardoArias PX = new Pixel_198538736_GuajardoArias(0, 0, 1, myColor9);
+        Pixel_198538736_GuajardoArias PY = new Pixel_198538736_GuajardoArias(1, 0, 1, myColor10);
+        Pixel_198538736_GuajardoArias PZ = new Pixel_198538736_GuajardoArias(0, 1, 1, myColor11);
+        Pixel_198538736_GuajardoArias PW = new Pixel_198538736_GuajardoArias(1, 1, 1, myColor12);
+        pixList4.add(PY);
+        pixList4.add(PX);
+        pixList4.add(PZ);
+        pixList4.add(PW);
+        Image_198538736_GuajardoArias myImage4 = new Image_198538736_GuajardoArias(2, 2, pixList4);
+        this.imageList.add(myImage4);
     }
 
 }
