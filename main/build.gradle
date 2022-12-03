@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'org.usach'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -16,4 +16,13 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+jar {
+    manifest {
+        attributes "Main-Class": "org.usach.main"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

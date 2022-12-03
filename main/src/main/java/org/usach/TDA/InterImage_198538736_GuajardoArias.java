@@ -28,7 +28,6 @@ public interface InterImage_198538736_GuajardoArias {
 
     Image_198538736_GuajardoArias rotate90();
 
-    void printImage();
 
     void histogram();
 

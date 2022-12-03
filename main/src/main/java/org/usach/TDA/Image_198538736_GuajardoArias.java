@@ -140,7 +140,6 @@ public class Image_198538736_GuajardoArias implements InterImage_198538736_Guaja
     }
 
     // printImage permite imprimir ancho, largo y cada pixel dentro de la lista
-    @Override
     public void printImage() {
         System.out.println("Width: " + this.width + " " + "Height: " + this.height + "\n");
         for (Pixel_198538736_GuajardoArias i : this.pixlist) {

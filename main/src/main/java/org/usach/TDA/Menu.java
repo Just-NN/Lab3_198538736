@@ -70,10 +70,10 @@ public class Menu {
         int H = in.nextInt();
         int H1 = 0;
         while (H1 < H){
-            //System.out.println("ENTRÓ AL PRIMERO");
+
             int W1 = 0;
             while (W1 < W){
-                //System.out.println("ENTRÓ AL SEGUNDO");
+
                 colorCreation();
                 System.out.println("Por favor, ingrese la profundidad d (cualquier valor entero): ");
                 int d = in.nextInt();
