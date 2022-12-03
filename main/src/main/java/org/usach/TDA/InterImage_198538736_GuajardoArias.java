@@ -1,10 +1,11 @@
 package org.usach.TDA;
 
 
-/* la interfaz Inter-Image establece qué métodos deben implementarse para
-    la imagen, que serían los requisitos funcionales de
+/**
+ *  la interfaz Inter-Image establece qué métodos deben implementarse para
+ *  la imagen, que serían los requisitos funcionales de
+ *
  */
-
 public interface InterImage_198538736_GuajardoArias {
 
 

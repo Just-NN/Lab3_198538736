@@ -36,7 +36,7 @@ public class Menu {
         do {
             Scanner in = new Scanner(System.in);
             System.out.println("---------------------------------------------");
-            System.out.println("Menú de Imágenes: ");
+            System.out.println("Menu de Imagenes: ");
             System.out.println("Por favor, escoja su preferencia:");
             System.out.println("1. Crear imagen\n" +
                     "2. Modificar imagen\n" +

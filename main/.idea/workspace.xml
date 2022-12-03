@@ -5,27 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a47d04-fe05-441a-b790-0ce82bfcbff4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../COSO/.idea/COSO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/Color_198538736_GuajardoArias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/Image_198538736_GuajardoArias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/InterImage_198538736_GuajardoArias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/Par_198538736_GuajardoArias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/TDA/Pixel_198538736_GuajardoArias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../COSO/src/org/usach/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LabPOO2/LabPOO2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/libs/main-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compilar.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/checksums/checksums.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/dependencies-accessors/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/7.4/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/gc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/file-system.probe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.gradle/vcs-1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_POO2/.idea/.gitignore" beforeDir="false" />
@@ -59,6 +59,7 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/usach/TDA/Par_198538736_GuajardoArias.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/usach/TDA/Par_198538736_GuajardoArias.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/usach/TDA/Pixel_198538736_GuajardoArias.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/usach/TDA/Pixel_198538736_GuajardoArias.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Color_198538736_GuajardoArias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Color_198538736_GuajardoArias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Image_198538736_GuajardoArias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Image_198538736_GuajardoArias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/usach/TDA/InterImage_198538736_GuajardoArias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usach/TDA/InterImage_198538736_GuajardoArias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usach/TDA/Menu.java" afterDir="false" />
