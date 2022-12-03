@@ -1,0 +1,8 @@
+Pre-requisitos: Para el uso del programa es necesario tener la versión de Java 11.0.16.1 y Gradle 7.6, 
+junto a sus respectivas rutas para poder ejecutar sus comandos desde la consola.
+
+
+Cómo iniciar el programa: 
+Una vez instalados los pre-requisitos, basta con dirigirse a la carpeta “main” dentro del proyecto.
+Estando ahí, hacer doble click en el archivo “main.bat” (se ejecutará gradle y, a continuación, el proyecto desde una ventana cmd).
+En la nueva ventana, se ejecuta el laboratorio desde su menú.
