@@ -1,5 +1,9 @@
 TDA
 Valor (logrado (1) | Parcialmente logrado (0.5) | no logrado (0))
+Clases y estructuras
+logrado 1
+Menú interactivo por terminal
+logrado 1
 TDA image - constructor
 logrado 1
 TDA image - bitmap? 
@@ -24,13 +28,11 @@ TDA image - rotate90
 logrado 1
 TDA image - compress
 no logrado 0
-TDA image - edit 
+TDA image - changePixel
 no logrado 0
 TDA image - invertColorBit 
 no logrado 0
 TDA image - invertColorRGB
-no logrado 0
-TDA image - adjustChannel 
 no logrado 0
 TDA image - image->string
 no logrado 0
